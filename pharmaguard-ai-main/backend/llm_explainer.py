@@ -54,7 +54,7 @@ Instructions:
 
     try:
         response = client.chat.completions.create(
-            model="model="openai/gpt-oss-20b",",
+            model="openai/gpt-oss-20b",
             messages=[
                 {"role": "system", "content": "You are a clinical pharmacogenomics expert following CPIC guidelines strictly."},
                 {"role": "user", "content": prompt}
