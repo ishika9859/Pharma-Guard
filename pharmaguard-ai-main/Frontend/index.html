@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PharmaGuard</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="background"></div>
-
-<header class="top-header">
-  <div class="logo-section">
-    <div class="logo">🛡️</div>
-    <h1>PharmaGuard</h1>
-  </div>
-
-  <div class="login-btn">
-    <button onclick="openLogin()">Login</button>
-  </div>
-</header>
-
-<section class="hero">
-  <p>
-    Welcome back, <span>Guest</span>. Upload genetic data to assess
-    personalized pharmacogenomic drug risk.
-  </p>
-</section>
-
-<main class="cards single">
-
-  <div class="card primary" onclick="goToGenomics()">
-    <div class="icon">🧬</div>
-    <h2>Genomic Analysis</h2>
-    <p>
-      Upload VCF files to identify pharmacogenomic variants and receive
-      CPIC-aligned dosing recommendations across 6 critical genes using
-      explainable AI.
+  <header class="hero">
+    <div class="badge">🛡 Pharmacogenomic Risk Assessment</div>
+    <h1>Pharma<span>Guard</span></h1>
+    <p class="hero-text">
+      AI-powered adverse drug reaction prediction through pharmacogenomic analysis.
+      Upload a VCF file, select medications, and receive clinically explainable risk assessments.
     </p>
-    <button class="cta">Start Analysis</button>
-  </div>
+    <div class="stats">
+      <span>✣ 6 Critical Genes</span>
+      <span>△ CPIC-Aligned</span>
+      <span>◯ 100K+ Deaths Preventable</span>
+    </div>
+  </header>
 
-</main>
+  <main class="container">
+    <section class="card analysis-card">
+      <div class="section-title"><span>⌁</span><h2>Analysis Input</h2></div>
 
-<!-- Login Modal -->
-<div id="loginModal" class="modal hidden">
-  <div class="modal-content">
-    <h2>Login</h2>
-    <input type="text" placeholder="Email" />
-    <input type="password" placeholder="Password" />
-    <button>Login</button>
-    <p class="close" onclick="closeLogin()">Close</p>
-  </div>
-</div>
+      <label>Genomic Data (VCF File)</label>
+      <div id="dropZone" class="drop-zone">
+        <div class="upload-icon">↥</div>
+        <strong>Drop your VCF file here or click to browse</strong>
+        <small>VCF v4.2 format • Max 5 MB</small>
+        <input id="vcfFile" type="file" accept=".vcf" hidden>
+      </div>
+      <div id="fileInfo" class="file-info hidden"></div>
 
-<script src="script.js"></script>
+      <label class="med-label">Select Medications to Assess</label>
+      <div id="drugGrid" class="drug-grid"></div>
+      <p class="hint">Select one or more medications to assess drug-gene interactions.</p>
+
+      <button id="analyzeBtn" class="analyze-btn">Analyze Drug Interactions <span>→</span></button>
+      <div id="loading" class="loading hidden">Analyzing genomic data and generating explanation…</div>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <section id="resultsSection" class="results-section hidden">
+      <div class="results-heading">
+        <div><span>⌁</span><h2>Risk Assessment Results</h2></div>
+        <span id="countLabel"></span>
+      </div>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>PharmaGuard</strong>
+    <p>Pharmacogenomic risk assessment for research and educational use only.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

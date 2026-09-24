@@ -1,66 +1,41 @@
-.sub-header {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-.upload-card input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255,255,255,0.08);
-  color: white;
-}
-
-.upload-card button {
-  margin-top: 10px;
-  width: 100%;
-  padding: 12px;
-  background: #3fe0d0;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.result-card {
-  margin-top: 25px;
-}
-
-.loading {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.hidden {
-  display: none;
-}
-
-.risk-badge {
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-
-.risk-safe { background: #2ecc71; color: black; }
-.risk-adjust { background: #f1c40f; color: black; }
-.risk-toxic { background: #e74c3c; }
-.risk-ineffective { background: #c0392b; }
-.risk-unknown { background: #7f8c8d; }
-
-.explanation-card {
-  max-height: 250px;
-  overflow-y: auto;
-  line-height: 1.6;
-}
-   
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7f8;color:#26343b}
+.hero{background:linear-gradient(120deg,#124d79,#0b5b62);color:#fff;text-align:center;padding:48px 20px 52px}
+.badge{display:inline-block;background:rgba(75,205,193,.16);border:1px solid rgba(110,230,216,.25);border-radius:24px;padding:9px 17px;font-size:13px;color:#d4f5f1}
+.hero h1{font-size:48px;margin:22px 0 12px;letter-spacing:-2px}.hero h1 span{color:#39c7bd}
+.hero-text{max-width:680px;margin:0 auto;line-height:1.5;color:#d7e8eb;font-size:16px}
+.stats{display:flex;justify-content:center;gap:32px;margin-top:25px;font-size:13px;color:#c5dce0}
+.container{max-width:980px;margin:0 auto;padding:32px 20px 55px}
+.card,.result-card{background:#fff;border:1px solid #e1e8ea;border-radius:14px;box-shadow:0 5px 22px rgba(23,55,65,.08)}
+.analysis-card{padding:26px}.section-title,.results-heading>div{display:flex;align-items:center;gap:9px}
+.section-title>span,.results-heading>div>span{color:#2aaea5;font-size:24px;font-weight:bold}
+.section-title h2,.results-heading h2{font-size:18px;margin:0}
+.analysis-card label,.med-label{display:block;font-size:13px;font-weight:700;margin:24px 0 10px}
+.drop-zone{border:2px dashed #cddcde;border-radius:12px;padding:32px 15px;text-align:center;cursor:pointer;background:#fbfdfd}
+.drop-zone:hover{border-color:#58bdb5;background:#f7fcfb}
+.upload-icon{font-size:30px;color:#71898f;margin-bottom:8px}.drop-zone strong{display:block;font-size:14px}.drop-zone small{display:block;margin-top:7px;color:#8b9a9e}
+.file-info{margin-top:10px;background:#e8f8f2;border:1px solid #b9e8d7;border-radius:10px;padding:12px 15px;color:#2b655a;font-size:13px}
+.drug-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.drug{border:1px solid #dfe7e8;border-radius:10px;padding:13px;text-align:left;background:#fff;cursor:pointer;transition:.15s}
+.drug:hover{border-color:#79c9c2}.drug.selected{border-color:#45bdb3;background:#eefaf8;box-shadow:0 0 0 2px rgba(69,189,179,.12)}
+.drug strong{display:block;font-size:13px}.drug small{color:#7f8e93;display:block;margin-top:4px}
+.hint{font-size:11px;color:#879499}.analyze-btn{width:100%;border:0;border-radius:9px;padding:13px;background:#7fc9c2;color:#fff;font-weight:700;cursor:pointer;margin-top:10px}
+.analyze-btn:hover{background:#58b7ae}.analyze-btn:disabled{cursor:wait;opacity:.65}
+.loading{text-align:center;font-weight:bold;margin:16px;color:#47777a;font-size:13px}
+.error{margin-top:12px;padding:10px;border-radius:8px;background:#fff0f0;color:#a83b3b;font-size:13px}
+.results-section{margin-top:30px}.results-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+.results-heading>span{font-size:12px;color:#839095}.result-card{padding:20px;margin-bottom:15px}
+.result-top{display:flex;justify-content:space-between;gap:15px}.result-top h3{margin:0;font-size:18px}
+.subline{font-size:12px;color:#7e8c91;margin-top:5px}.risk{padding:8px 14px;border-radius:18px;font-weight:700;font-size:12px;white-space:nowrap}
+.safe{background:#dff6e9;color:#28774a}.adjust-dosage{background:#fff1ce;color:#956b14}.toxic{background:#ffe0e0;color:#a52f2f}.ineffective{background:#f8dede;color:#9d3131}.unknown{background:#e9edef;color:#68757a}
+.metric{margin:17px 0}.metric-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px}
+.bar{height:6px;background:#e5ecee;border-radius:10px;overflow:hidden}.bar span{display:block;height:100%;background:#43b5ad;border-radius:10px}
+.severity{font-size:12px;color:#9a7927;margin-top:6px}.profile{border-top:1px solid #edf1f2;margin-top:16px;padding-top:15px}
+.profile-title{font-size:13px;font-weight:700;color:#42666a;margin-bottom:12px}.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.profile-item span{display:block;font-size:10px;color:#89959a;margin-bottom:4px}.profile-item strong{font-size:13px}
+.variants{margin-top:13px;display:flex;gap:6px;flex-wrap:wrap}.variant{background:#0d557d;color:#fff;border-radius:5px;padding:4px 7px;font-size:10px}
+.accordion{border-top:1px solid #edf1f2;margin-top:15px;padding-top:13px}.accordion summary{cursor:pointer;font-weight:700;font-size:13px;color:#42666a}
+.recommendation,.explanation{margin-top:10px;padding:13px;border-radius:8px;font-size:13px;line-height:1.55}.recommendation{background:#f5f9fa}.explanation{background:#edf9f7;white-space:pre-line}
+footer{text-align:center;padding:20px;color:#7d8b90;font-size:11px}footer p{margin:6px 0}.hidden{display:none!important}
+@media(max-width:700px){.hero h1{font-size:38px}.stats{flex-direction:column;gap:8px}.drug-grid{grid-template-columns:1fr 1fr}.profile-grid{grid-template-columns:1fr 1fr}.result-top{flex-direction:column}}
+@media(max-width:430px){.drug-grid,.profile-grid{grid-template-columns:1fr}}
